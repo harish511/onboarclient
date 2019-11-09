@@ -7,7 +7,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,4 +19,13 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.terms-conditions span:last-child{
+  color:black;
+  text-align: left;
+}
+
+.form-header{
+  color:black;
 }

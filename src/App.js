@@ -1,23 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import OnBoardForm from './OnBoard/onboardform.js';
+import SignIn from './OnBoard/SignIn.js';
+
+import Dashboard from './dashboard/Dashboard.js';
+
+import Address from './OnBoard/address.js';
+
+import UserIndentity from './OnBoard/UserIdentityInfo.js'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+      <SignIn/>
+
+      <OnBoardForm/>
+
+      <Address/>
+
+      <UserIndentity/>
+
+      <Dashboard/>
+        
       </header>
     </div>
   );
