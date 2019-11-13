@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function UserIndentity({next,prev}) {
+export default function Thankyou({next,prev}) {
   const classes = useStyles();
 
   const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
@@ -75,61 +75,11 @@ export default function UserIndentity({next,prev}) {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-      <div className={classes.paper}>
-        <Typography className="form-header" component="h1" variant="h5">
-          Personal Information
-        </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} >
-              <TextField
-                autoComplete="SSN"
-                name="SSN"
-                variant="outlined"
-                required
-                fullWidth
-                id="SSN"
-                label="SSN"
-                autoFocus
-              />
-            </Grid>
 
-            <Grid item xs={12}>
-  <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
-        <KeyboardDatePicker
-          disableToolbar
-           variant="outlined"
-            fullWidth
-          format="MM/dd/yyyy"
-          margin="normal"
-          id="date-picker-inline"
-          label="Date of Birth"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        />
-        </Grid>
-    </MuiPickersUtilsProvider>
-            </Grid>
-          </Grid>
-        </form>
-
-         <Grid container spacing={2} justify="center">
-              <Grid item>
-                  <Button variant="contained" color="primary" onClick={()=>prev()}>
-                    Back
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="contained" color="primary" onClick={()=>next()}>
-                    Next
-                  </Button>
-                </Grid>
-              </Grid>
-      </div>
+         <Typography variant="h5" align="center" color="textSecondary" paragraph style={{color:"green"}}>
+            Yayy.. Congrats You have Successfully completed Onboarding Process!!
+            </Typography>
+         
       <Box mt={5}>
         <Copyright />
       </Box>

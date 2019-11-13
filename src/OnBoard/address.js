@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Address() {
+export default function Address({next,prev}) {
   const classes = useStyles();
 
   return (
@@ -131,6 +131,19 @@ export default function Address() {
               />
             </Grid>
           </Grid>
+
+          <Grid container spacing={2} justify="center">
+              <Grid item>
+                  <Button variant="contained" color="primary" onClick={()=>prev()}>
+                    Back
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="contained" color="primary" onClick={()=>next()}>
+                    Next
+                  </Button>
+                </Grid>
+              </Grid>
         </form>
       </div>
       <Box mt={5}>

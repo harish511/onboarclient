@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function OnBoardForm() {
+export default function OnBoardForm({signInClick,login}) {
   const classes = useStyles();
 
   return (
@@ -147,12 +147,13 @@ export default function OnBoardForm() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={()=>{login()}}
           >
             Sign Up
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" variant="body2" onClick={()=>signInClick()}>
                 Already have an account? Sign in
               </Link>
             </Grid>

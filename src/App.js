@@ -6,28 +6,91 @@ import SignIn from './OnBoard/SignIn.js';
 
 import Dashboard from './dashboard/Dashboard.js';
 
-import Address from './OnBoard/address.js';
 
-import UserIndentity from './OnBoard/UserIdentityInfo.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+import UserIndentity from './OnBoard/UserIdentityInfo.js';
 
-      <SignIn/>
+import HorizontalLabelPositionBelowStepper from './OnBoard/stepbar.js';
 
-      <OnBoardForm/>
+import MenuAppBar from './OnBoard/MenuAppBar.js';
 
-      <Address/>
+import Welcome from './OnBoard/Welcome.js'
 
-      <UserIndentity/>
+//const ActiveComponent=OnBoardForm;
 
-      <Dashboard/>
-        
-      </header>
+class App extends React.Component {
+
+  constructor(props){
+   super(props);
+   this.state={
+    ActiveComponent:"OnBoardForm",
+    userInfo:{}
+   }
+  }
+
+
+login=(userInfo)=>{
+
+  this.setState({ActiveComponent:"Welcome"});
+
+}
+
+signInClick=()=>{
+
+  const ActiveComponent="SignIn";
+  this.setState({ActiveComponent});
+
+}
+
+signUpClick=()=>{
+
+  const ActiveComponent="OnBoardForm";
+  this.setState({ActiveComponent});
+
+}
+
+showSuitabilityProcess=()=>{
+
+  const ActiveComponent="Suitability";
+  this.setState({ActiveComponent});
+
+}
+
+renderActiveComponent=()=>{
+const ActiveComponent=this.state.ActiveComponent;
+  if(ActiveComponent==="OnBoardForm"){
+    return (<OnBoardForm signInClick={this.signInClick} login={this.login}/>)
+  }
+
+  if(ActiveComponent==="SignIn"){
+    return (<SignIn signIn={this.signIn} signUpClick={this.signUpClick} login={this.login}/>)
+  }
+
+
+  if(ActiveComponent==="Welcome"){
+    return (<Welcome userInfo={this.state.userInfo}/>)
+  }
+
+
+
+  // if(ActiveComponent==="Suitability"){
+  //   return (<Suitability/>)
+  // }
+}
+
+
+  render() {
+
+    
+    return (
+    <div className="App"> 
+      <MenuAppBar/>
+      {
+        this.renderActiveComponent()
+      }
     </div>
   );
+  }
 }
 
 export default App;

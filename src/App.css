@@ -29,3 +29,16 @@
 .form-header{
   color:black;
 }
+
+
+.acc-header{
+      text-align: left;
+    margin-bottom: 12px !important;
+}
+
+
+
+.makeStyles-card-368:hover{
+  cursor: pointer;
+  border:2px solid #0072ffeb;
+}
